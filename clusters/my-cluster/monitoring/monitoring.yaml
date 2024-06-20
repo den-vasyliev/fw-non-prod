@@ -33,6 +33,6 @@ spec:
     name: flux-system
   path: clusters/my-cluster/monitoring/configs
   healthChecks:
-    - apiVersion: monitoring.coreos.com/v1
-      kind: Prometheus
-      name: prometheus-kube-prometheus-stack-prometheus-0
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: podmonitors.monitoring.coreos.com
