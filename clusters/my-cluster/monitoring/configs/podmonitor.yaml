@@ -5,6 +5,8 @@ metadata:
   labels:
     app.kubernetes.io/part-of: flux
     app.kubernetes.io/component: monitoring
+  annotations:
+    kustomize.toolkit.fluxcd.io/ssa: Ignore  
 spec:
   namespaceSelector:
     matchNames:
