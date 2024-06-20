@@ -32,3 +32,7 @@ spec:
     kind: GitRepository
     name: flux-system
   path: clusters/my-cluster/monitoring/configs
+  healthChecks:
+    - apiVersion: monitoring.coreos.com/v1
+      kind: Prometheus
+      name: prometheus-kube-prometheus-stack-prometheus-0
