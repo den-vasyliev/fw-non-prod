@@ -8,7 +8,7 @@ metadata:
 spec:
   interval: 1m0s
   ref:
-    branch: main
+    branch: improve/flux-monitoring
   secretRef:
     name: flux-system
   url: https://github.com/den-vasyliev/fw-non-prod.git
