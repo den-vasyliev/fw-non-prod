@@ -29,6 +29,7 @@ spec:
             privileged: false
             runAsNonRoot: true
             runAsUser: 65532
+            readOnlyRootFilesystem: true
             capabilities:
               drop:
                 - ALL
@@ -36,3 +37,10 @@ spec:
             - containerPort: 8501
               name: http
               protocol: TCP
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"

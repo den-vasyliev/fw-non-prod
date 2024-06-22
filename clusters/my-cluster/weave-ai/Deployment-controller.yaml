@@ -81,6 +81,7 @@ spec:
           capabilities:
             drop:
             - ALL
+          readOnlyRootFilesystem: true
           seccompProfile:
             type: RuntimeDefault
         terminationMessagePath: /dev/termination-log
