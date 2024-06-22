@@ -1,0 +1,14 @@
+name: kubelinter
+on: [push, pull_request]
+jobs:
+  kubelinter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Scan yamls
+        id: kube-lint-scan
+        uses: stackrox/kube-linter-action@v1
+        with:
+          directory: './clusters/my-cluster'
