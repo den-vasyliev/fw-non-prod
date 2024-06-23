@@ -12,3 +12,23 @@ jobs:
         uses: stackrox/kube-linter-action@v1
         with:
           directory: './clusters/my-cluster'
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up script
+        run: |
+          git clone https://github.com/fluxcd/flux2-monitoring-example.git
+          mkdir -p ./scripts
+          cp flux2-monitoring-example/scripts/validate.sh ./scripts/validate.sh
+          chmod +x ./scripts/validate.sh
+      - name: Install kubeconform
+        run: |
+          curl -LO https://github.com/yannh/kubeconform/releases/download/v0.6.6/kubeconform-linux-amd64.tar.gz
+          tar -xzf kubeconform-linux-amd64.tar.gz
+          sudo mv kubeconform /usr/local/bin/
+
+      - name: Run validation script
+        run: ./scripts/validate.sh
