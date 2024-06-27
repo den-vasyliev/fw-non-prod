@@ -319,8 +319,5 @@ data:
     #     - echo init
 kind: ConfigMap
 metadata:
-  creationTimestamp: "2024-06-27T00:06:00Z"
   name: ollama-values-configmap
   namespace: default
-  resourceVersion: "86248"
-  uid: 946e19ce-166d-46e4-9000-85387e762757
